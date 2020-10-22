@@ -13,7 +13,7 @@ class Abstract_Coffee():
     def get_tax(self) -> float:
         return 0.1 * self.get_cost()
 
-class Concrete_Coffe(Abstract_Coffee):
+class Concrete_Coffee(Abstract_Coffee):
     """
     Concrete component provide default implementations of the operations.
     """
@@ -49,9 +49,6 @@ class Sugar(Coffee_Decorator):
     Concrete decorator call the wrapped object and alter its result in some way.
     """
 
-    def __init__(self, decorated_coffee):
-        super(self, decorated_coffee)
-
     def get_cost(self):
         return self._decorated_coffee.get_cost()
 
@@ -63,9 +60,6 @@ class Milk(Coffee_Decorator):
     Concrete decorator call the wrapped object and alter its result in some way.
     """
 
-    def __init__(self, decorated_coffee):
-        super(self, decorated_coffee)
-
     def get_cost(self):
         return self._decorated_coffee.get_cost() + 0.25
 
@@ -76,9 +70,6 @@ class Vanilla(Coffee_Decorator):
     """
     Concrete decorator call the wrapped object and alter its result in some way.
     """
-
-    def __init__(self, decorated_coffee):
-        super(self, decorated_coffee)
 
     def get_cost(self):
         return self._decorated_coffee.get_cost() + 0.75
