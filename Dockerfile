@@ -23,4 +23,4 @@ RUN pip install --upgrade pip
 
 COPY . /app
 
-CMD ["python", "./decorator_pattern.py"]
+CMD ["python", "./app.py"]
