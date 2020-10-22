@@ -18,65 +18,71 @@ class Concrete_Coffe(Abstract_Coffee):
     Concrete component provide default implementations of the operations.
     """
 
-    def get_cost(self) -> float:
+    def get_cost(self):
         return 1.00
 
-    def get_ingredients(self) -> str:
+    def get_ingredients(self):
         return 'coffee'
 
-class Abstract_Coffee_Decorator(Abstract_Coffee):
+class Coffee_Decorator(Abstract_Coffee):
+    """
+    The base Decorator class follows the same interface as the other components.
+    The primary purpose of this class is to define the wrapping interface for
+    all concrete decoratos. The default implementation of the wrapping code
+    might include a field for storing a wrapped component and the means to
+    initialize it.
     """
 
-    """
+    _decorated_coffee: Abstract_Coffee = None
 
-    def __init__(self, decorated_coffee):
-        self.decorated_coffee = decorated_coffee
+    def __init__(self, decorated_coffee: Abstract_Coffee) -> None:
+        self._decorated_coffee = decorated_coffee
 
     def get_cost(self) -> float:
-        return self.decorated_coffee.get_cost()
+        return self._decorated_coffee.get_cost()
 
     def get_ingredients(self) -> str:
-        return self.decorated_coffee.get_ingredients()
+        return self._decorated_coffee.get_ingredients()
 
-class Sugar(Abstract_Coffee_Decorator):
+class Sugar(Coffee_Decorator):
     """
-
-    """
-
-    def __init__(self, decorated_coffee):
-        super(self, decorated_coffee)
-
-    def get_cost(self) -> float:
-        return self.decorated_coffee.get_cost()
-
-    def get_ingredients(self) -> str:
-        return self.decorated_coffee.get_ingredients() + ', sugar'
-
-class Milk(Abstract_Coffee_Decorator):
-    """
-
+    Concrete decorator call the wrapped object and alter its result in some way.
     """
 
     def __init__(self, decorated_coffee):
         super(self, decorated_coffee)
 
-    def get_cost(self) -> float:
-        return self.decorated_coffee.get_cost() + 0.25
+    def get_cost(self):
+        return self._decorated_coffee.get_cost()
 
-    def get_ingredients(self) -> str:
-        return self.decorated_coffee.get_ingredients() + ', milk'
+    def get_ingredients(self):
+        return self._decorated_coffee.get_ingredients() + ', sugar'
 
-class Vanilla(Abstract_Coffee_Decorator):
+class Milk(Coffee_Decorator):
     """
-
+    Concrete decorator call the wrapped object and alter its result in some way.
     """
 
     def __init__(self, decorated_coffee):
         super(self, decorated_coffee)
 
-    def get_cost(self) -> float:
-        return self.decorated_coffee.get_cost() + 0.75
+    def get_cost(self):
+        return self._decorated_coffee.get_cost() + 0.25
 
-    def get_ingredients(self) -> str:
-        return self.decorated_coffee.get_ingredients() + ', vanilla'
+    def get_ingredients(self):
+        return self._decorated_coffee.get_ingredients() + ', milk'
+
+class Vanilla(Coffee_Decorator):
+    """
+    Concrete decorator call the wrapped object and alter its result in some way.
+    """
+
+    def __init__(self, decorated_coffee):
+        super(self, decorated_coffee)
+
+    def get_cost(self):
+        return self._decorated_coffee.get_cost() + 0.75
+
+    def get_ingredients(self):
+        return self._decorated_coffee.get_ingredients() + ', vanilla'
     
