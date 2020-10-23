@@ -6,6 +6,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN go build main.go
+RUN go build -o main .
 
-CMD ["/app/main"]
+CMD ["./main"]
