@@ -1,9 +1,8 @@
 # Base image
 FROM python:rc-buster
 
-MAINTAINER Carlos Navas
+LABEL maintainer="Carlos Navas <dante.maniacs@gmail.com>"
 
-RUN mkdir /app
 WORKDIR /app
 
 #
