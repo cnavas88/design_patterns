@@ -23,17 +23,4 @@ inheritance has several important limitations.
 
 To solve this problem we can use the pattern decorator (Wrapper). The wrapper implements the same interface as the wrapped object. This is why, from the customer's perspective, these objects are identical.
 
-## How to run project
-
-Steps:
-1. Build docker image: 
-
-```bash
-docker build -t NAME_IMAGE .
-```
-
-2. Run docker image: 
-
-```bash   
-docker run NAME_IMAGE
-```
+The solution is in 2 languages: Golang and Python.
