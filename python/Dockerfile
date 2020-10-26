@@ -22,4 +22,12 @@ RUN pip install --upgrade pip
 
 COPY . /app
 
-CMD ["python", "./app.py"]
+#
+# If you want execute the python app
+#
+# CMD ["python", "./app.py"]
+
+#
+# If you want execute the python test
+#
+CMD python -m unittest test_coffeeshop.py

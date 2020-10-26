@@ -12,3 +12,7 @@ docker build -t NAME_IMAGE .
 ```bash   
 docker run NAME_IMAGE
 ```
+
+### Execute the tests
+
+The project is configured to run tests automatically when you run docker image. See dockerfile.
