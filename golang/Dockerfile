@@ -2,10 +2,12 @@ FROM golang:latest
 
 LABEL maintainer="Carlos Navas <dante.maniacs@gmail.com>"
 
+# Set the current directory inside the container
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
-RUN go build -o main .
+# Build the go app
+RUN go build -o .
 
-CMD ["./main"]
+CMD go test -v ./coffeeshop
