@@ -30,4 +30,4 @@ COPY . /app
 #
 # If you want execute the python test
 #
-CMD python -m unittest test_coffeeshop.py
+CMD python -m unittest test/test_coffeeshop.py

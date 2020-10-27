@@ -1,4 +1,4 @@
-import coffeeshop
+from app import coffeeshop
 import unittest
 
 class MyTest(unittest.TestCase):
