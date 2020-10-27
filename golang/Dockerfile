@@ -7,7 +7,11 @@ WORKDIR /app
 
 COPY . .
 
-# Build the go app
-RUN go build -o .
+#
+# If you want create a main.go file and testing in dev environment
+# you can build the app and execute it
+#
+# RUN go build -o .
+# CMD ["./app"]
 
 CMD go test -v ./coffeeshop
