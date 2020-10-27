@@ -1,19 +1,19 @@
-package main
+package coffeeshop
 
 // Vanilla decorator struct to add Vanilla to coffee
 type Vanilla struct {
-	coffee Coffee
+	Coffee Coffee
 }
 
 // GetCost get the cost of base coffee and plus the cost of Vanilla complement
 func (m *Vanilla) GetCost() float32 {
-	coffeePrice := m.coffee.GetCost()
+	coffeePrice := m.Coffee.GetCost()
 	return coffeePrice + 0.75
 }
 
 // GetIngredients get the ingrtedients and add the Vanilla ingredient
 func (m *Vanilla) GetIngredients() string {
-	coffeeIngredients := m.coffee.GetIngredients()
+	coffeeIngredients := m.Coffee.GetIngredients()
 	return coffeeIngredients + ", Vanilla"
 }
 

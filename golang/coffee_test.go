@@ -2,10 +2,12 @@ package main
 
 import (
 	"testing"
+
+	"./coffeeshop"
 )
 
 func TestConcreteCoffee(t *testing.T) {
-	coffee := &ConcreteCoffee{}
+	coffee := &coffeeshop.ConcreteCoffee{}
 
 	if coffee.GetCost() != 1.00 {
 		t.Errorf("Expected cost 1.00, but got %v", coffee.GetCost())
@@ -21,10 +23,10 @@ func TestConcreteCoffee(t *testing.T) {
 }
 
 func TestAddSugar(t *testing.T) {
-	coffee := &ConcreteCoffee{}
+	coffee := &coffeeshop.ConcreteCoffee{}
 
-	coffeeWithSugar := &Sugar{
-		coffee: coffee,
+	coffeeWithSugar := &coffeeshop.Sugar{
+		Coffee: coffee,
 	}
 
 	if coffeeWithSugar.GetCost() != 1.00 {
@@ -41,14 +43,14 @@ func TestAddSugar(t *testing.T) {
 }
 
 func TestAddSugarAndMilk(t *testing.T) {
-	coffee := &ConcreteCoffee{}
+	coffee := &coffeeshop.ConcreteCoffee{}
 
-	coffeeWithSugar := &Sugar{
-		coffee: coffee,
+	coffeeWithSugar := &coffeeshop.Sugar{
+		Coffee: coffee,
 	}
 
-	coffeeWithSugarMilk := &Milk{
-		coffee: coffeeWithSugar,
+	coffeeWithSugarMilk := &coffeeshop.Milk{
+		Coffee: coffeeWithSugar,
 	}
 
 	if coffeeWithSugarMilk.GetCost() != 1.25 {
@@ -65,18 +67,18 @@ func TestAddSugarAndMilk(t *testing.T) {
 }
 
 func TestAddAllIngredients(t *testing.T) {
-	coffee := &ConcreteCoffee{}
+	coffee := &coffeeshop.ConcreteCoffee{}
 
-	coffeeWithSugar := &Sugar{
-		coffee: coffee,
+	coffeeWithSugar := &coffeeshop.Sugar{
+		Coffee: coffee,
 	}
 
-	coffeeWithSugarMilk := &Milk{
-		coffee: coffeeWithSugar,
+	coffeeWithSugarMilk := &coffeeshop.Milk{
+		Coffee: coffeeWithSugar,
 	}
 
-	coffeeAllIngredients := &Vanilla{
-		coffee: coffeeWithSugarMilk,
+	coffeeAllIngredients := &coffeeshop.Vanilla{
+		Coffee: coffeeWithSugarMilk,
 	}
 
 	if coffeeAllIngredients.GetCost() != 2.00 {

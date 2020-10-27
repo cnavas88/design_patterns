@@ -1,4 +1,4 @@
-package main
+package coffeeshop
 
 // ConcreteCoffee is the base component
 type ConcreteCoffee struct {

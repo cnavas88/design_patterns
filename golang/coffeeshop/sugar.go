@@ -1,19 +1,19 @@
-package main
+package coffeeshop
 
 // Sugar decorator struct to add sugar to coffee
 type Sugar struct {
-	coffee Coffee
+	Coffee Coffee
 }
 
 // GetCost get the cost of base coffee and plus the cost of sugar complement
 func (s *Sugar) GetCost() float32 {
-	coffeePrice := s.coffee.GetCost()
+	coffeePrice := s.Coffee.GetCost()
 	return coffeePrice
 }
 
 // GetIngredients get the ingrtedients and add the sugar ingredient
 func (s *Sugar) GetIngredients() string {
-	coffeeIngredients := s.coffee.GetIngredients()
+	coffeeIngredients := s.Coffee.GetIngredients()
 	return coffeeIngredients + ", Sugar"
 }
 
