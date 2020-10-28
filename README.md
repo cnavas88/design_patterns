@@ -1,6 +1,6 @@
 # PATTERN DECORATOR
 
-Project to practice and have an example of pattern decorator using python.
+Project to practice and have an example of pattern decorator using golang and python.
 
 ## What is pattern decorator
 
